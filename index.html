@@ -14,9 +14,7 @@
     <form class="container-lg p-4 needs-validation" novalidate>
       <ul class="list-group">
         <li class="list-group-item list-group-item-light">
-          <h3>
-            Payment form example
-          </h3>
+          <h3>Payment form example</h3>
         </li>
 
         <li class="list-group-item">
@@ -24,7 +22,7 @@
 
           <div class="container-fluid">
             <div class="row">
-              <div class="mt-2 col">
+              <fieldset class="mt-2 col">
                 <label for="card" class="form-label">Card #</label>
                 <input
                   type="text"
@@ -33,8 +31,8 @@
                   placeholder="XXXXXXXXXXXXXXXX"
                   required
                 />
-              </div>
-              <div class="mt-2 col-3">
+              </fieldset>
+              <fieldset class="mt-2 col-3">
                 <label for="cvc" class="form-label">CVC #</label>
                 <input
                   type="text"
@@ -43,8 +41,8 @@
                   placeholder="0000"
                   required
                 />
-              </div>
-              <div class="mt-2 col-4">
+              </fieldset>
+              <fieldset class="mt-2 col-4">
                 <label for="amount" class="form-label">Amount</label>
                 <div class="input-group">
                   <b>$</b>
@@ -58,40 +56,40 @@
                     required
                   />
                 </div>
-              </div>
+              </fieldset>
             </div>
 
             <div class="row">
-              <div class="mt-2 col">
+              <fieldset class="mt-2 col">
                 <label for="first" class="form-label">First Name</label>
                 <input type="text" class="form-control" id="first" required />
-              </div>
-              <div class="mt-2 col">
+              </fieldset>
+              <fieldset class="mt-2 col">
                 <label for="last" class="form-label">Last Name</label>
                 <input type="text" class="form-control" id="last" required />
-              </div>
+              </fieldset>
             </div>
 
             <div class="row">
-              <div class="mt-2 col-6">
+              <fieldset class="mt-2 col-6">
                 <label for="city" class="form-label">City</label>
                 <input type="text" class="form-control" id="city" required />
-              </div>
-              <div class="mt-2 col-3">
+              </fieldset>
+              <fieldset class="mt-2 col-3">
                 <label for="state" class="form-label">State</label>
                 <select class="form-select" id="state" required>
                   <option value="" selected disabled>Pick a state</option>
                   <option>Texas</option>
                 </select>
-              </div>
-              <div class="mt-2 col-3">
+              </fieldset>
+              <fieldset class="mt-2 col-3">
                 <label for="postal" class="form-label">Postal Code</label>
                 <input type="text" class="form-control" id="postal" required />
-              </div>
+              </fieldset>
             </div>
 
             <div class="row mt-3 gy-3">
-              <div class="col">
+              <fieldset class="col">
                 <label class="form-label d-block">We accept:</label>
                 <div
                   class="bg-secondary p-1 rounded d-inline-flex align-items-center gap-3 pequeño"
@@ -126,9 +124,8 @@
                   />
                   <i class="fa-brands fa-cc-amex fa-2x text-light"></i>
                 </div>
-              </div>
-
-              <div class="col">
+              </fieldset>
+              <fieldset class="col">
                 <label for="message" class="form-label">Message</label>
                 <textarea
                   class="form-control"
@@ -139,12 +136,14 @@
                 <div id="messageHelp" class="form-text">
                   Add any notes here.
                 </div>
-              </div>
+              </fieldset>
             </div>
           </div>
         </li>
 
-        <li class="list-group-item d-flex gap-2 justify-content-end list-group-item-light">
+        <li
+          class="list-group-item d-flex gap-2 justify-content-end list-group-item-light"
+        >
           <button type="button" class="btn btn-secondary">Cancel</button>
           <button type="submit" class="btn btn-primary">Send</button>
         </li>
