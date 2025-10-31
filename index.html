@@ -11,7 +11,7 @@
     <title>Payment form example</title>
   </head>
   <body>
-    <form class="container-lg p-4 needs-validation" novalidate>
+    <form class="container-lg p-4">
       <ul class="list-group">
         <li class="list-group-item list-group-item-light">
           <h3>Payment form example</h3>
@@ -30,6 +30,12 @@
                   id="card"
                   placeholder="XXXXXXXXXXXXXXXX"
                   required
+                  inputmode="numeric"
+                  autocomplete="cc-number"
+                  minlength="15"
+                  maxlength="16"
+                  pattern="\d{15,16}"
+                  title="Introduce 15 o 16 dígitos sin espacios."
                 />
               </fieldset>
               <fieldset class="mt-2 col-3">
@@ -40,6 +46,12 @@
                   id="cvc"
                   placeholder="0000"
                   required
+                  inputmode="numeric"
+                  autocomplete="cc-csc"
+                  minlength="3"
+                  maxlength="4"
+                  pattern="\d{3,4}"
+                  title="3 o 4 dígitos."
                 />
               </fieldset>
               <fieldset class="mt-2 col-4">
@@ -48,12 +60,13 @@
                   <b>$</b>
                   <input
                     type="number"
-                    min="0"
+                    min="0.01"
                     step="0.01"
                     class="form-control"
                     id="amount"
                     placeholder="Amount"
                     required
+                    title="Importe mínimo 0.01"
                   />
                 </div>
               </fieldset>
@@ -62,29 +75,63 @@
             <div class="row">
               <fieldset class="mt-2 col">
                 <label for="first" class="form-label">First Name</label>
-                <input type="text" class="form-control" id="first" required />
+                <input
+                  type="text"
+                  class="form-control"
+                  id="first"
+                  required
+                  autocomplete="given-name"
+                  pattern="[A-Za-zÀ-ÿ\s'\-]{2,}"
+                  title="Solo letras, espacios, ' o -, mínimo 2 caracteres."
+                />
               </fieldset>
               <fieldset class="mt-2 col">
                 <label for="last" class="form-label">Last Name</label>
-                <input type="text" class="form-control" id="last" required />
+                <input
+                  type="text"
+                  class="form-control"
+                  id="last"
+                  required
+                  autocomplete="family-name"
+                  pattern="[A-Za-zÀ-ÿ\s'\-]{2,}"
+                  title="Solo letras, espacios, ' o -, mínimo 2 caracteres."
+                />
               </fieldset>
             </div>
 
             <div class="row">
               <fieldset class="mt-2 col-6">
                 <label for="city" class="form-label">City</label>
-                <input type="text" class="form-control" id="city" required />
+                <input
+                  type="text"
+                  class="form-control"
+                  id="city"
+                  required
+                  autocomplete="address-level2"
+                  pattern="[A-Za-zÀ-ÿ\s'\-]{2,}"
+                  title="Solo letras, espacios, ' o -, mínimo 2 caracteres."
+                />
               </fieldset>
               <fieldset class="mt-2 col-3">
                 <label for="state" class="form-label">State</label>
-                <select class="form-select" id="state" required>
+                <select class="form-select" id="state" required autocomplete="address-level1">
                   <option value="" selected disabled>Pick a state</option>
                   <option>Texas</option>
+                  <option>Spain</option>
+                  <option>Andorra</option>
                 </select>
               </fieldset>
               <fieldset class="mt-2 col-3">
                 <label for="postal" class="form-label">Postal Code</label>
-                <input type="text" class="form-control" id="postal" required />
+                <input
+                  type="text"
+                  class="form-control"
+                  id="postal"
+                  required
+                  autocomplete="postal-code"
+                  pattern="(\d{5}|AD\d{3})"
+                  title="5 dígitos (ES/US) o formato AD123 (Andorra)."
+                />
               </fieldset>
             </div>
 
@@ -101,28 +148,28 @@
                     id="mc"
                     required
                   />
-                  <i class="fa-brands fa-cc-mastercard fa-2x text-light"></i>
+                  <label for="mc"><i class="fa-brands fa-cc-mastercard fa-2x text-light"></i></label>
                   <input
                     type="radio"
                     class="form-check-input"
                     name="cardType"
                     id="visa"
                   />
-                  <i class="fa-brands fa-cc-visa fa-2x text-light"></i>
+                  <label for="visa"><i class="fa-brands fa-cc-visa fa-2x text-light"></i></label>
                   <input
                     type="radio"
                     class="form-check-input"
                     name="cardType"
                     id="disc"
                   />
-                  <i class="fa-brands fa-cc-discover fa-2x text-light"></i>
+                  <label for="disc"><i class="fa-brands fa-cc-discover fa-2x text-light"></i></label>
                   <input
                     type="radio"
                     class="form-check-input"
                     name="cardType"
                     id="amex"
                   />
-                  <i class="fa-brands fa-cc-amex fa-2x text-light"></i>
+                  <label for="amex"><i class="fa-brands fa-cc-amex fa-2x text-light"></i></label>
                 </div>
               </fieldset>
               <fieldset class="col">
@@ -132,6 +179,7 @@
                   id="message"
                   rows="3"
                   aria-describedby="messageHelp"
+                  maxlength="500"
                 ></textarea>
                 <div id="messageHelp" class="form-text">
                   Add any notes here.
